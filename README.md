@@ -1,1 +1,3 @@
-# sails-angular-seed
+# sailsAngularSeed
+
+a [Sails](http://sailsjs.org) application
