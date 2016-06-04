@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
 
@@ -17,9 +18,89 @@
 </head>
 
 <body ng-app="myModule">
-    <h1>Sails Angular Seed</h1>
+    
+    <!-- BEGIN: App-Loading Screen.-->
+    <div class="m-app-loading" ng-animate-children>
+
+        <!--
+            HACKY CODE WARNING: I'm putting Style block inside directive so that it
+            will be removed from the DOM when we remove the directive container.
+        -->
+        <style type="text/css">
+            div.m-app-loading {
+                position: fixed;
+                z-index: 1000;
+            }
+            
+            div.m-app-loading div.animated-container {
+                background-color: #fff;
+                bottom: 0px;
+                left: 0px;
+                opacity: 1.0;
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                z-index: 999999;
+            }
+            
+            div.m-app-loading div.animated-container.ng-leave {
+                opacity: 1.0;
+                transition: all linear 200ms;
+                -webkit-transition: all linear 200ms;
+            }
+            /* Used to set the end properties of the ng-leave animation state. */
+            
+            div.m-app-loading div.animated-container.ng-leave-active {
+                opacity: 0;
+            }
+            
+            div.m-app-loading div.messaging {
+                color: #666;
+                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                left: 0px;
+                margin-top: -37px;
+                position: absolute;
+                right: 0px;
+                text-align: center;
+                top: 40%;
+            }
+            
+            div.m-app-loading h1 {
+                font-size: 26px;
+                line-height: 35px;
+                margin: 0px 0px 20px 0px;
+            }
+            
+            div.m-app-loading h1 i {
+                font-size: 2em;
+                vertical-align: middle;
+                padding: 10px;
+                color: #666;
+            }
+            
+            div.m-app-loading i {
+                color: #04bfc6;
+                font-size: 3em;
+            }
+        </style>
+
+
+        <!-- BEGIN: Actual animated container. -->
+        <div class="animated-container">
+
+            <div class="messaging">
+                <i id="loader" class="fa fa-circle-o-notch fa-spin"></i>
+                <div>Loading</div>
+            </div>
+
+        </div>
+        <!-- END: Actual animated container. -->
+
+    </div>
+    <!-- END: App-Loading Screen. -->
 
     <div class="container">
+        <h1>Sails Angular Seed</h1>
         <div ng-view=""></div>
     </div>
 
@@ -38,10 +119,13 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <!-- endbower -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/directives/loading-screen/loading-screen.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
 </body>
