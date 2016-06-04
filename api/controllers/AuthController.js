@@ -6,6 +6,16 @@
  * the basics of Passport.js to work.
  */
 var AuthController = {
+  
+  loggedin: function (req, res) {
+        if (req.user) {
+            res.send(200, req.user);
+        }
+        else {
+            res.send('0');
+        }
+    },
+  
   /**
    * Render the login page
    *

@@ -11,7 +11,6 @@
  *   https://github.com/balderdashy/sails-docs/blob/master/anatomy/myApp/tasks/pipeline.js.md
  */
 
-
 // CSS files to inject in order
 //
 // (if you're using LESS with the built-in default config, you'll want
