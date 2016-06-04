@@ -1,4 +1,13 @@
 {
-	"Welcome": "Bienvenue",
-	"A brand new app.": "Une toute nouvelle application."
+	"Error.Passport.Password.Invalid": "Adresse email ou mot de passe incorrecte.",
+	"Error.Passport.Password.Wrong": "Adresse email ou mot de passe incorrecte.",
+	"Error.Passport.Password.NotSet": "Vous devez saisir un mot de passe.",
+	"Error.Passport.Username.NotFound": "Adresse email ou mot de passe incorrecte.",
+	"Error.Passport.User.Exists": "Déjà utilisé...",
+	"Error.Passport.Email.NotFound": "Adresse email ou mot de passe incorrecte.",
+	"Error.Passport.Email.Missing": "Vous devez saisir une adresse email.",
+	"Error.Passport.Email.Exists": "Cette adresse email est déjà utlisée.",
+	"Error.Passport.Username.Missing": "Vous devez saisir un nom d'utilisateur.",
+	"Error.Passport.Password.Missing": "Vous devez saisir un mot de passe.",
+	"Error.Passport.Generic": "Une erreur est survenue pendant l'authentification."
 }

@@ -45,5 +45,25 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  
+  
+  
+  
+  
+  /***************************************************************************
+  *                                                                          *
+  * Passport.js routes                                                    *
+  *                                                                          *
+  ***************************************************************************/
+  
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+  'get /register': 'AuthController.register',
+  'post /auth/local': 'AuthController.callback',
+  'post /auth/local/:action': 'AuthController.callback', 
+  
+  /*'Routes for oauth provider support
+  get /auth/:provider': 'AuthController.provider',
+  'get /auth/:provider/callback': 'AuthController.callback',
+  'get /auth/:provider/:action': 'AuthController.callback'*/
 };
