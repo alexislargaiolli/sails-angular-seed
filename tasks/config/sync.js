@@ -21,14 +21,15 @@ module.exports = function(grunt) {
     dev: {
       files: [{
         cwd: './assets/app/',
-        src: ['**/*.!(coffee|less|scss)'],
+        src: ['**/*.!(coffee|less|scss)', '!**/bower_components/**'],
         dest: '.tmp/public'
       },
       {
         cwd: './assets/.tmp/',
-        src: ['**/*.!(coffee|less|scss)'],
+        src: ['**/*.!(coffee|less|scss)', '!**/bower_components/**'],
         dest: '.tmp/public'
-      }]
+      }],
+      verbose: true
     }
   });
 

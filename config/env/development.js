@@ -19,6 +19,11 @@ module.exports = {
 
   models: {
     connection: 'mongodb'
+  },
+  
+  cors: {
+    allRoutes: true,
+    origin: '*'
   }
 
 };

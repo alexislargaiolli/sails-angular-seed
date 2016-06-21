@@ -20,12 +20,25 @@ module.exports = function(grunt) {
     assets: {
 
       // Assets to watch:
-      files: ['./assets/app/', './assets/.tmp/', 'tasks/pipeline.js', '!**/node_modules/**'],
+      files: ['assets/app/**/*', 'assets/.tmp/**/*', 'tasks/pipeline.js', '!**/node_modules/**'],
 
       // When assets are changed:
-      tasks: ['syncAssets' , 'linkAssets' ]
-    }
+      tasks: ['syncAssets']
+    },
+    livereload: {
+        options: {
+          livereload: 35728
+        },
+        files: [
+          'assets/app/**/*.html',
+          'assets/.tmp/styles/**/*.css',
+          'assets/app/scripts/**/*.js',
+          'assets/app/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+        ]
+      }
   });
-
+  grunt.event.on('watch', function(action, filepath, target) {
+    console.log(target + ': ' + filepath + ' has ' + action);
+  });
   grunt.loadNpmTasks('grunt-contrib-watch');
 };

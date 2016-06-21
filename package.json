@@ -30,6 +30,7 @@
     "validator": "^5.3.0"
   },
   "scripts": {
+    "postinstall": "assets/bower install --prod",
     "debug": "node debug app.js",
     "start": "node app.js"
   },
